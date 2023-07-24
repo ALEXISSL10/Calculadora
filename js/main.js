@@ -23,69 +23,84 @@ let txtResultado = document.getElementById("txtResultado");
 let lblDatos = document.getElementById("lblDatos");
 // Operaciones variables
 
-let uno = "1";
-let dos = "2";
+let operaciona;
+let operacionb;
+let operacionfinal;
 
 // Botones | acciones
 
 btnCero.addEventListener("click", function(event){
     event.preventDefault();
     lblDatos.value += "0";
-    txtResultado.value += "0";
+   txtResultado.textContent = txtResultado.textContent + "0";
     
     });
 
 btn1.addEventListener("click", function(event){
     event.preventDefault();
     lblDatos.value += "1";
+    txtResultado.value = txtResultado.value + "1";
+   
 });
 
 btn2.addEventListener("click", function(event){
     event.preventDefault();
     lblDatos.value += "2";
+    txtResultado.value = txtResultado.value + "2";
 });
 
 btn3.addEventListener("click", function(event){
     event.preventDefault();
     lblDatos.value += "3";
+    txtResultado.value = txtResultado.value + "3";
 });
 
 btn4.addEventListener("click", function(event){
     event.preventDefault();
     lblDatos.value += "4";
+    txtResultado.value = txtResultado.value + "4";
 });
 
 btn5.addEventListener("click", function(event){
     event.preventDefault();
     lblDatos.value += "5";
+    txtResultado.value = txtResultado.value + "5";
 });
 
 btn6.addEventListener("click", function(event){
     event.preventDefault();
     lblDatos.value += "6";
+    txtResultado.value = txtResultado.value + "6";
 });
 
 btn7.addEventListener("click", function(event){
     event.preventDefault();
     lblDatos.value += "7";
+    txtResultado.value = txtResultado.value + "7";
 });
 
 btn8.addEventListener("click", function(event){
     event.preventDefault();
     lblDatos.value += "8";
+    txtResultado.value = txtResultado.value + "8";
 });
 
 btn9.addEventListener("click", function(event){
     event.preventDefault();
     lblDatos.value += "9";
+    txtResultado.value = txtResultado.value += "9";
 });
 
 
+// Botones operaciones 
 
 btnSuma.addEventListener("click", function(event){
     event.preventDefault();
     lblDatos.value += "+";
+    operaciona = txtResultado.value;
+    operacionfinal = "+";
 });
+
 
 
     
@@ -93,25 +108,36 @@ btnSuma.addEventListener("click", function(event){
 btnResta.addEventListener("click", function(event){
     event.preventDefault();
     lblDatos.value += "-";
+    operaciona = txtResultado.value;
+    operacionfinal = "-";
 });
 
 btnDivide.addEventListener("click", function(event){
     event.preventDefault();
     lblDatos.value += "/";
+    operaciona = txtResultado.value;
+    operacionfinal = "/";
 });
 
 btnMultiplica.addEventListener("click", function(event){
     event.preventDefault();
     lblDatos.value += "*";
+    operaciona = txtResultado.value;
+    operacionfinal = "*";
 });
 
 btnIgual.addEventListener("click", function(event){
     event.preventDefault();
     lblDatos.value += "=";
+    operacionb = txtResultado.value;
+    resolver ();
+    
 });
 btnPunto.addEventListener("click", function(event){
     event.preventDefault();
     lblDatos.value += ".";
+    operaciona = txtResultado.value;
+    operacionfinal = ".";
 });
 btnBorrar.addEventListener("click", function(event){
     event.preventDefault();
@@ -119,6 +145,24 @@ btnBorrar.addEventListener("click", function(event){
     lblDatos.value = "";
 });
 
+function resolver(){
+    let res = 0;
+    switch(operacionfinal){
+      case "+":
+        res = parseFloat(operaciona) + parseFloat(operacionb);
+        break;
+      case "-":
+          res = parseFloat(operaciona) - parseFloat(operacionb);
+          break;
+      case "*":
+        res = parseFloat(operaciona) * parseFloat(operacionb);
+        break;
+      case "/":
+        res = parseFloat(operaciona) / parseFloat(operacionb);
+        break;
+    }
+    txtResultado.value = res;
+  }
 
 
 
