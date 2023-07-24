@@ -23,9 +23,9 @@ let txtResultado = document.getElementById("txtResultado");
 let lblDatos = document.getElementById("lblDatos");
 // Operaciones variables
 
-let operaciona;
-let operacionb;
-let operacionfinal;
+let operaciona = 0;
+let operacionb = 0;
+let operacionfinal = 0;
 
 // Botones | acciones
 
@@ -129,7 +129,7 @@ btnMultiplica.addEventListener("click", function(event){
 btnIgual.addEventListener("click", function(event){
     event.preventDefault();
     lblDatos.value += "=";
-    operacionb = txtResultado.value;
+    operaciona = txtResultado.value;
     resolver ();
     
 });
@@ -149,16 +149,16 @@ function resolver(){
     let res = 0;
     switch(operacionfinal){
       case "+":
-        res = parseFloat(operaciona) + parseFloat(operacionb);
+        res = parseFloat(operaciona) + parseFloat(operaciona);
         break;
       case "-":
-          res = parseFloat(operaciona) - parseFloat(operacionb);
+          res = parseFloat(operaciona) - parseFloat(operaciona);
           break;
       case "*":
-        res = parseFloat(operaciona) * parseFloat(operacionb);
+        res = parseFloat(operaciona) * parseFloat(operaciona);
         break;
       case "/":
-        res = parseFloat(operaciona) / parseFloat(operacionb);
+        res = parseFloat(operaciona) / parseFloat(operaciona);
         break;
     }
     txtResultado.value = res;
